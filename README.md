@@ -1,6 +1,6 @@
 # client
 
-## 【API](https://github.com/GlennOu66304/bucketlist-api-mongodb)
+## [API](https://github.com/GlennOu66304/bucketlist-api-mongodb)
 ## Project setup
 ```
 npm install
