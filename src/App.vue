@@ -109,7 +109,7 @@ export default {
 
   // mouted:send the axios requests get the post data
   async mounted() {
-    const response = await axios.get("api/bucketListItems/");
+    const response = await axios.get(`${process.env.VUE_APP_API}/api/items/`);
     this.items = response.data;
   },
 
@@ -117,7 +117,7 @@ export default {
   methods: {
     // add post axios request data
     async addItem() {
-      const response = await axios.post("api/bucketListItems/", {
+      const response = await axios.post(`${process.env.VUE_APP_API}/api/items/`, {
         description: this.description,
       });
       this.items.push(response.data);
@@ -126,7 +126,7 @@ export default {
 
     // delet post axios request data
     async removeItem(item, i) {
-      await axios.delete("api/bucketListItems/" + item._id);
+      await axios.delete(`${process.env.VUE_APP_API}/api/items/` + item._id);
       this.items.splice(i, 1);
     },
 
@@ -149,7 +149,7 @@ export default {
 
     // update the post axios reques
     async updateItem(item, i) {
-      const response = await axios.put("api/bucketListItems/" + item._id, {
+      const response = await axios.put(`${process.env.VUE_APP_API}/api/items/` + item._id, {
         description: this.editedDescription,
       });
       this.items[i] = response.data;
